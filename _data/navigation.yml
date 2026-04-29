@@ -10,20 +10,22 @@ main:
   - title: "论文"
     url: /publications/
 
-  - title: "演讲"
-    url: /talks/    
-
-  - title: "教学"
-    url: /teaching/    
-    
-  - title: "项目"
-    url: /portfolio/
-        
   - title: "博客"
     url: /year-archive/
+
+  - title: "旅游"
+    url: /travel/
     
   - title: "简历"
     url: /cv/
+
+  # 以下为暂时隐藏的导航（保留原配置，按需取消注释）
+  # - title: "演讲"
+  #   url: /talks/
+  # - title: "教学"
+  #   url: /teaching/
+  # - title: "项目"
+  #   url: /portfolio/
     
   # - title: "简历"
   #   url: /cv-json/
