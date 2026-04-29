@@ -13,8 +13,11 @@ main:
   - title: "博客"
     url: /year-archive/
 
-  - title: "旅游"
-    url: /travel/
+  # - title: "旅游"
+  #   url: /travel/
+
+  - title: "项目"
+    url: /portfolio/
     
   - title: "简历"
     url: /cv/
@@ -24,7 +27,7 @@ main:
   #   url: /talks/
   # - title: "教学"
   #   url: /teaching/
-  # - title: "项目"
+  # - title: "项目（备用）"
   #   url: /portfolio/
     
   # - title: "简历"
