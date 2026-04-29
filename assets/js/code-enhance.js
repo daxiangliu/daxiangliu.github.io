@@ -118,11 +118,7 @@
       document.querySelectorAll(".page__content h2[id], .page__content h3[id]")
     );
 
-    if (!headings.length) {
-      var rightSidebar = document.querySelector(".sidebar__right");
-      if (rightSidebar) rightSidebar.style.display = "none";
-      return;
-    }
+    if (!headings.length) return;
 
     var lastH2Li = null;
     headings.forEach(function (heading) {
@@ -154,8 +150,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    enhanceH2();
     enhanceToc();
+    enhanceH2();
     enhanceCodeBlocks();
   });
 })();
