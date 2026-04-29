@@ -30,3 +30,4 @@ redirect_from:
 
 - 邮箱：`clcnboss@qq.com`
 - GitHub：`https://github.com/CLCNboss`
+- CSDN：`https://blog.csdn.net/weixin_63310665`
