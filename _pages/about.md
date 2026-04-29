@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-你好，我是 **CL-CNboss**，欢迎来到我的个人主页。
+你好，我是 **CLCNboss**，欢迎来到我的个人主页。
 
 这里可以展示：
 - 个人简介与联系方式
@@ -29,4 +29,4 @@ redirect_from:
 ## 联系方式
 
 - 邮箱：`clcnboss@qq.com`
-- GitHub：`https://github.com/CL-CNboss`
+- GitHub：`https://github.com/CLCNboss`
