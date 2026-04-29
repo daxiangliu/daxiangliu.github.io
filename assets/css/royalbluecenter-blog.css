@@ -2,7 +2,7 @@
 .page__content {
   max-width: 860px; /* 设置最大宽度为860像素 */
   font-size: 1rem; /* 设置字体大小为1rem */
-  color: black; /* 设置文本颜色为黑色 */
+  color: var(--global-text-color); /* 自动适配明暗主题文本颜色 */
   padding: 0 10px; /* 设置内边距为上下0像素，左右10像素 */
   line-height: 1.6; /* 设置行高为1.6倍字体大小 */
   word-spacing: 0px; /* 设置单词间距为0像素 */
@@ -21,7 +21,7 @@
   padding-bottom: .5rem; /* 设置下内边距为0.5rem */
   margin: 0; /* 设置外边距为0 */
   line-height: 1.5rem; /* 设置行高为1.5倍字体大小 */
-  color: black; /* 设置文本颜色为黑色 */
+  color: var(--global-text-color); /* 自动适配明暗主题文本颜色 */
 }
 
 /* 目录 */
@@ -39,7 +39,7 @@
   margin: 1.2em 0 1em; /* 设置外边距 */
   padding: 0px; /* 设置内边距为0像素 */
   font-weight: bold; /* 设置字体粗细为粗体 */
-  color: black; /* 设置文本颜色为黑色 */
+  color: var(--global-text-color); /* 自动适配明暗主题文本颜色 */
 }
 .page__content h1 {
   font-size: 1.5rem; /* 设置字体大小为1.5rem */
@@ -95,7 +95,7 @@
   margin-top: 8px; /* 设置上外边距为8像素 */
   margin-bottom: 8px; /* 设置下外边距为8像素 */
   padding-left: 25px; /* 设置左内边距为25像素 */
-  color: black; /* 设置文本颜色为黑色 */
+  color: var(--global-text-color); /* 自动适配明暗主题文本颜色 */
 }
 .page__content ul {
   list-style-type: disc; /* 设置列表样式为实心圆 */
@@ -111,7 +111,7 @@
   margin-bottom: 5px; /* 设置下外边距为5像素 */
   line-height: 1.7rem; /* 设置行高为1.7倍字体大小 */
   text-align: left; /* 设置文本对齐方式为左对齐 */
-  color: rgb(1,1,1); /* 设置文本颜色为黑色 */
+  color: var(--global-text-color); /* 自动适配明暗主题文本颜色 */
   font-weight: 500; /* 设置字体粗细为500 */
 }
 
@@ -121,11 +121,11 @@
   font-size: .9em; /* 设置字体大小为0.9em */
   overflow: auto; /* 设置溢出内容自动隐藏 */
   border-left: 3px solid rgb(65, 105, 225); /* 设置左侧边框 */
-  color: #6a737d; /* 设置文本颜色为灰色 */
+  color: var(--global-text-color-light); /* 自动适配明暗主题文本颜色 */
   padding: 10px 10px 10px 20px; /* 设置内边距 */
   margin-bottom: 20px; /* 设置下外边距为20像素 */
   margin-top: 20px; /* 设置上外边距为20像素 */
-  background: #F0F8FF; /* 设置背景色为 浅蓝色 */
+  background: rgba(65, 105, 225, 0.08); /* 明暗模式都可读的浅色背景 */
 }
 
 /* 链接 */
@@ -133,9 +133,8 @@
   text-decoration: none; /* 取消下划线 */
   word-wrap: break-word; /* 设置单词换行 */
   font-weight: bold; /* 设置字体粗细为粗体 */
-  border-bottom: 1px solid #1e6bb8; /* 设置底部边框 */
-  color: rgb(65, 105, 225); /* 设置文本颜色为蓝色 */
-  border-bottom: 1px solid rgb(65, 105, 225); /* 设置底部边框 */
+  color: var(--global-link-color); /* 跟随主题链接色 */
+  border-bottom: 1px solid var(--global-link-color); /* 跟随主题链接色 */
 }
 
 /* 行内代码 */
@@ -169,22 +168,22 @@
 }
 .page__content table tr {
   border: 0; /* 设置边框为0 */
-  border-top: 1px solid #ccc; /* 设置顶部边框 */
-  background-color: white; /* 设置背景色为白色 */
+  border-top: 1px solid var(--global-border-color); /* 自动适配主题边框色 */
+  background-color: var(--global-bg-color); /* 自动适配主题背景色 */
 }
 .page__content table tr:nth-child(2n) {
-  background-color: #F8F8F8; /* 设置偶数行背景色为浅灰色 */
+  background-color: rgba(127, 127, 127, 0.08); /* 明暗模式都可读的斑马纹 */
 }
 .page__content table tr th,
 .page__content table tr td {
   font-size: 1rem; /* 设置字体大小为1rem */
-  border: 1px solid #ccc; /* 设置边框 */
+  border: 1px solid var(--global-border-color); /* 自动适配主题边框色 */
   padding: 5px 10px; /* 设置内边距 */
   text-align: left; /* 设置文本对齐方式为左对齐 */
 }
 .page__content table tr th {
   font-weight: bold; /* 设置字体粗细为粗体 */
-  background-color: #f0f0f0; /* 设置背景色为浅灰色 */
+  background-color: var(--global-thead-color); /* 自动适配主题表头背景 */
 }
 
 /* 行内代码 */
@@ -212,10 +211,19 @@
 }
 .page__content .md-def-name:before {
   content: '['; /* 设置内容为左方括号 */
-  color: #000; /* 设置文本颜色为黑色 */
+  color: var(--global-text-color); /* 自动适配明暗主题文本颜色 */
 }
 .page__content .md-def-name:after {
-  color: #000; /* 设置文本颜色为黑色 */
+  color: var(--global-text-color); /* 自动适配明暗主题文本颜色 */
+}
+
+html[data-theme="dark"] .page__content h2:after {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+html[data-theme="dark"] .page__content p code,
+html[data-theme="dark"] .page__content li code {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* 代码块主题 */
