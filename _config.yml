@@ -8,10 +8,10 @@
 # 基础站点设置
 locale                   : "zh-CN"
 site_theme               : "default" # 可选主题："default"、"air"、"sunrise"、"mint"、"dirt"、"contrast"
-title                    : "CLCNboss 的个人主页"
+title                    : "CLCNboss的个人主页"
 title_separator          : "-"
 name                     : &name "CLCNboss"
-description              : &description "CLCNboss 的个人主页与项目展示"
+description              : &description "CLCNboss的个人主页与项目展示"
 url                      : https://clcnboss.github.io # 站点主域名，例如 "https://[你的 GitHub 用户名].github.io"
                                                            # 如果仓库不是用户名主页仓库，可用 "https://[用户名].github.io/[仓库名]"
 baseurl                  : "" # 子路径，例如 "/blog"；使用用户名主页仓库时通常留空
