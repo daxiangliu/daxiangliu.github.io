@@ -5,25 +5,25 @@
 # MIT License
 -->
 
-<!-- Initialize -->
+<!-- 初始化 -->
 {% assign __empty_array = '' | split: ',' %}
 {% assign group_names = __empty_array %}
 {% assign group_items = __empty_array %}
 
-<!-- Map -->
+<!-- 映射 -->
 {% assign __names =  include.collection | map: include.field %}
 
-<!-- Flatten -->
+<!-- 展平 -->
 {% assign __names =  __names | join: ',' | join: ',' | split: ',' %}
 
-<!-- Uniq -->
+<!-- 去重 -->
 {% assign __names =  __names | sort %}
 {% for name in __names | sort %}
 
-<!-- If not equal to previous then it must be unique as sorted -->
+<!-- 由于已排序，若与前一个不同则说明是唯一值 -->
 {% unless name == previous %}
 
-<!-- Push to group_names -->
+<!-- 追加到 group_names -->
 {% assign group_names = group_names | push: name %}
 {% endunless %}
 
@@ -31,10 +31,10 @@
 {% endfor %}
 
 
-<!-- group_items -->
+<!-- 构建 group_items -->
 {% for name in group_names %}
 
-<!-- Collect if contains -->
+<!-- 若包含该名称则收集 -->
 {% assign __item = __empty_array %}
 {% for __element in include.collection %}
 {% if __element[include.field] contains name %}
@@ -42,6 +42,6 @@
 {% endif %}
 {% endfor %}
 
-<!-- Push to group_items -->
+<!-- 追加到 group_items -->
 {% assign group_items = group_items | push: __item %}
 {% endfor %}

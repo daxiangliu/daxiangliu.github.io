@@ -1,38 +1,38 @@
 #!/bin/bash
 
-# Script to update the CV JSON file from the markdown CV
-# Author: Yuan Chen
+# 将 Markdown 简历转换并更新为 CV JSON 的脚本
+# 作者：Yuan Chen
 
-# Set the base directory to the repository root
+# 设置仓库根目录
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# Define file paths
+# 定义文件路径
 CV_MARKDOWN="$BASE_DIR/_pages/cv.md"
 CV_JSON="$BASE_DIR/_data/cv.json"
 CONFIG_FILE="$BASE_DIR/_config.yml"
 
-# Check if the Python script exists
+# 检查 Python 脚本是否存在
 PYTHON_SCRIPT="$BASE_DIR/scripts/cv_markdown_to_json.py"
 if [ ! -f "$PYTHON_SCRIPT" ]; then
   echo "Error: Python script not found at $PYTHON_SCRIPT"
   exit 1
 fi
 
-# Check if the markdown CV exists
+# 检查 Markdown 简历文件是否存在
 if [ ! -f "$CV_MARKDOWN" ]; then
   echo "Error: Markdown CV not found at $CV_MARKDOWN"
   exit 1
 fi
 
-# Run the Python script to convert markdown to JSON
+# 执行 Python 脚本进行转换
 echo "Converting markdown CV to JSON..."
 python3 "$PYTHON_SCRIPT" --input "$CV_MARKDOWN" --output "$CV_JSON" --config "$CONFIG_FILE"
 
-# Check if the conversion was successful
+# 检查转换是否成功
 if [ $? -eq 0 ]; then
   echo "Successfully updated CV JSON file at $CV_JSON"
   
-  # Optional: Build the Jekyll site to see the changes
+  # 可选：构建 Jekyll 站点以预览变更
   echo "Would you like to build the Jekyll site to see the changes? (y/n)"
   read -r answer
   if [[ "$answer" =~ ^[Yy]$ ]]; then

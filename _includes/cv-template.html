@@ -16,7 +16,7 @@
 </style>
 
 <div class="cv-container">
-  <!-- Basic Information -->
+  <!-- 基础信息 -->
   <div class="cv-section cv-header">
     <h1>{{ cv.basics.name }}</h1>
     {% if cv.basics.label %}
@@ -61,7 +61,7 @@
   </div>
   
   {% if cv.basics.summary %}
-  <!-- Summary -->
+  <!-- 个人简介 -->
   <div class="cv-section">
     <h2>Summary</h2>
     <p>{{ cv.basics.summary }}</p>
@@ -69,7 +69,7 @@
   {% endif %}
   
   {% if cv.education.size > 0 %}
-  <!-- Education -->
+  <!-- 教育背景 -->
   <div class="cv-section">
     <h2>Education</h2>
     <ul class="cv-list">
@@ -97,7 +97,7 @@
   {% endif %}
   
   {% if cv.work.size > 0 %}
-  <!-- Work Experience -->
+  <!-- 工作经历 -->
   <div class="cv-section">
     <h2>Work Experience</h2>
     <ul class="cv-list">
@@ -127,7 +127,7 @@
   {% endif %}
   
   {% if cv.skills.size > 0 %}
-  <!-- Skills -->
+  <!-- 技能 -->
   <div class="cv-section">
     <h2>Skills</h2>
     <div class="cv-skills">
@@ -146,7 +146,7 @@
   {% endif %}
   
   {% if cv.publications.size > 0 %}
-  <!-- Publications -->
+  <!-- 论文与出版物 -->
   <div class="cv-section">
     <h2>Publications</h2>
     <ul class="cv-list">
@@ -174,7 +174,7 @@
   {% endif %}
   
   {% if cv.presentations.size > 0 %}
-  <!-- Presentations/Talks -->
+  <!-- 演讲与报告 -->
   <div class="cv-section">
     <h2>Presentations</h2>
     <ul class="cv-list">
@@ -200,7 +200,7 @@
   {% endif %}
   
   {% if cv.teaching.size > 0 %}
-  <!-- Teaching -->
+  <!-- 教学经历 -->
   <div class="cv-section">
     <h2>Teaching</h2>
     <ul class="cv-list">
@@ -226,7 +226,7 @@
   {% endif %}
   
   {% if cv.portfolio.size > 0 %}
-  <!-- Portfolio -->
+  <!-- 项目与作品 -->
   <div class="cv-section">
     <h2>Portfolio</h2>
     <ul class="cv-list">
@@ -254,7 +254,7 @@
   {% endif %}
   
   {% if cv.languages.size > 0 %}
-  <!-- Languages -->
+  <!-- 语言能力 -->
   <div class="cv-section">
     <h2>Languages</h2>
     <ul class="cv-list">
@@ -271,7 +271,7 @@
   {% endif %}
   
   {% if cv.interests.size > 0 %}
-  <!-- Interests -->
+  <!-- 兴趣方向 -->
   <div class="cv-section">
     <h2>Interests</h2>
     <ul class="cv-list">
@@ -290,7 +290,7 @@
   {% endif %}
   
   {% if cv.references.size > 0 %}
-  <!-- References -->
+  <!-- 推荐信息 -->
   <div class="cv-section">
     <h2>References</h2>
     <ul class="cv-list">

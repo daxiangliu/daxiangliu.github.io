@@ -1,11 +1,10 @@
-# The following is the order of the links in the header of the website.
+# 以下配置决定网站顶部导航栏链接顺序。
 #
-# Changing the order here will adjust the order and you can also add additional
-# links. Removing a link prevents it from showing in the header, but does not
-# prevent it from being included in the site.
+# 在这里调整顺序会同步影响导航显示。
+# 删除某个链接只会让它不显示在导航栏，不会删除对应页面。
 #
-# NOTE that only one of the CV options should be selected, the first is for the
-#      Markdown formatted page while the second is generated using JSON.
+# 注意：CV 仅应保留一种入口。
+#      第一种是 Markdown 版简历，第二种是 JSON 生成版简历。
 
 main:
   - title: "论文"
@@ -26,6 +25,6 @@ main:
   - title: "简历"
     url: /cv/
     
-  # - title: "CV"
+  # - title: "简历"
   #   url: /cv-json/
     

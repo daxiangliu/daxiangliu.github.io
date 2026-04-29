@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script to convert markdown CV to JSON format
+将 Markdown 简历转换为 JSON 格式的脚本
 Author: Yuan Chen
 """
 
@@ -13,7 +13,7 @@ from datetime import datetime, date
 from pathlib import Path
 import glob
 
-# Custom JSON encoder to handle date objects
+# 处理日期对象的自定义 JSON 编码器
 class DateTimeEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, (datetime, date)):
@@ -21,14 +21,14 @@ class DateTimeEncoder(json.JSONEncoder):
         return super().default(obj)
 
 def parse_markdown_cv(md_file):
-    """Parse the markdown CV file and extract sections."""
+    """解析 Markdown 简历并提取章节。"""
     with open(md_file, 'r', encoding='utf-8') as file:
         content = file.read()
     
-    # Remove YAML front matter
+    # 去除 YAML 头部信息
     content = re.sub(r'^---.*?---\s*', '', content, flags=re.DOTALL)
     
-    # Extract sections
+    # 提取章节内容
     sections = {}
     current_section = None
     section_content = []
@@ -46,14 +46,14 @@ def parse_markdown_cv(md_file):
         elif current_section:
             section_content.append(line)
     
-    # Add the last section
+    # 补上最后一个章节
     if current_section and section_content:
         sections[current_section] = '\n'.join(section_content).strip()
     
     return sections
 
 def parse_config(config_file):
-    """Parse the Jekyll _config.yml file for additional information."""
+    """解析 Jekyll _config.yml 并读取附加信息。"""
     if not os.path.exists(config_file):
         return {}
     
@@ -63,7 +63,7 @@ def parse_config(config_file):
     return config
 
 def extract_author_info(config):
-    """Extract author information from the config file."""
+    """从配置文件中提取作者信息。"""
     author_info = {
         "name": config.get('name', ''),
         "email": "",
@@ -80,37 +80,37 @@ def extract_author_info(config):
         "profiles": []
     }
     
-    # Extract author details if available
+    # 若存在 author 字段，则提取详细信息
     if 'author' in config:
         author = config.get('author', {})
         
-        # Override name if author name is available
+        # 若 author.name 存在，则覆盖默认 name
         if author.get('name'):
             author_info['name'] = author.get('name')
         
-        # Add email
+        # 添加邮箱
         if author.get('email'):
             author_info['email'] = author.get('email')
         
-        # Add location
+        # 添加地点
         if author.get('location'):
             author_info['location']['city'] = author.get('location', '')
         
-        # Add employer as part of summary
+        # 将雇主信息写入摘要
         if author.get('employer'):
             author_info['summary'] = f"Currently employed at {author.get('employer')}"
         
-        # Add bio to summary if available
+        # 若有 bio，则补充到摘要中
         if author.get('bio'):
             if author_info['summary']:
                 author_info['summary'] += f". {author.get('bio')}"
             else:
                 author_info['summary'] = author.get('bio')
         
-        # Add social profiles
+        # 组装社交档案
         profiles = []
         
-        # Academic profiles
+        # 学术平台档案
         if author.get('googlescholar'):
             profiles.append({
                 "network": "Google Scholar",
@@ -132,7 +132,7 @@ def extract_author_info(config):
                 "url": author.get('researchgate')
             })
         
-        # Social media profiles
+        # 社交媒体档案
         if author.get('github'):
             profiles.append({
                 "network": "GitHub",
@@ -159,19 +159,19 @@ def extract_author_info(config):
     return author_info
 
 def parse_education(education_text):
-    """Parse education section from markdown."""
+    """解析教育经历章节。"""
     education_entries = []
     
-    # Extract education entries
+    # 提取教育经历条目
     entries = re.findall(r'\* (.*?)(?=\n\*|\Z)', education_text, re.DOTALL)
     
     for entry in entries:
-        # Parse degree, institution, and year
+        # 解析学位、学校与年份
         match = re.match(r'([^,]+), ([^,]+), (\d{4})(.*)', entry.strip())
         if match:
             degree, institution, year, additional = match.groups()
             
-            # Extract GPA if available
+            # 若存在 GPA 则提取
             gpa_match = re.search(r'GPA: ([\d\.]+)', additional)
             gpa = gpa_match.group(1) if gpa_match else None
             
@@ -188,10 +188,10 @@ def parse_education(education_text):
     return education_entries
 
 def parse_work_experience(work_text):
-    """Parse work experience section from markdown."""
+    """解析工作经历章节。"""
     work_entries = []
     
-    # Extract work entries
+    # 提取工作经历条目
     entries = re.findall(r'\* (.*?)(?=\n\*|\Z)', work_text, re.DOTALL)
     
     for entry in entries:
@@ -199,19 +199,19 @@ def parse_work_experience(work_text):
         if not lines:
             continue
             
-        # Parse position and company
+        # 解析职位与单位
         first_line = lines[0].strip()
         position_match = re.match(r'(.*?), (.*?)(?:, |$)', first_line)
         
         if position_match:
             position, company = position_match.groups()
             
-            # Extract dates if available
+            # 提取起止时间（若存在）
             date_match = re.search(r'(\d{4})\s*-\s*(\d{4}|present)', entry, re.IGNORECASE)
             start_date = date_match.group(1) if date_match else ""
             end_date = date_match.group(2) if date_match else ""
             
-            # Extract highlights
+            # 提取亮点/职责条目
             highlights = []
             for line in lines[1:]:
                 if line.strip().startswith('*') or line.strip().startswith('-'):
@@ -230,14 +230,14 @@ def parse_work_experience(work_text):
     return work_entries
 
 def parse_skills(skills_text):
-    """Parse skills section from markdown."""
+    """解析技能章节。"""
     skills_entries = []
     
-    # Extract skill categories
+    # 提取技能分类
     categories = re.findall(r'(?:^|\n)(\w+.*?):\s*(.*?)(?=\n\w+.*?:|\Z)', skills_text, re.DOTALL)
     
     for category, skills in categories:
-        # Extract individual skills
+        # 提取具体技能项
         skill_list = [s.strip() for s in re.split(r',|\n', skills) if s.strip()]
         
         skills_entries.append({
@@ -249,7 +249,7 @@ def parse_skills(skills_text):
     return skills_entries
 
 def parse_publications(pub_dir):
-    """Parse publications from the _publications directory."""
+    """从 _publications 目录解析出版物。"""
     publications = []
     
     if not os.path.exists(pub_dir):
@@ -259,12 +259,12 @@ def parse_publications(pub_dir):
         with open(pub_file, 'r', encoding='utf-8') as file:
             content = file.read()
         
-        # Extract front matter
+        # 提取 front matter
         front_matter_match = re.match(r'^---\s*(.*?)\s*---', content, re.DOTALL)
         if front_matter_match:
             front_matter = yaml.safe_load(front_matter_match.group(1))
             
-            # Extract publication details
+            # 提取出版物详情
             pub_entry = {
                 "name": front_matter.get('title', ''),
                 "publisher": front_matter.get('venue', ''),
@@ -278,7 +278,7 @@ def parse_publications(pub_dir):
     return publications
 
 def parse_talks(talks_dir):
-    """Parse talks from the _talks directory."""
+    """从 _talks 目录解析演讲信息。"""
     talks = []
     
     if not os.path.exists(talks_dir):
@@ -288,12 +288,12 @@ def parse_talks(talks_dir):
         with open(talk_file, 'r', encoding='utf-8') as file:
             content = file.read()
         
-        # Extract front matter
+        # 提取 front matter
         front_matter_match = re.match(r'^---\s*(.*?)\s*---', content, re.DOTALL)
         if front_matter_match:
             front_matter = yaml.safe_load(front_matter_match.group(1))
             
-            # Extract talk details
+            # 提取演讲详情
             talk_entry = {
                 "name": front_matter.get('title', ''),
                 "event": front_matter.get('venue', ''),
@@ -307,7 +307,7 @@ def parse_talks(talks_dir):
     return talks
 
 def parse_teaching(teaching_dir):
-    """Parse teaching from the _teaching directory."""
+    """从 _teaching 目录解析教学信息。"""
     teaching = []
     
     if not os.path.exists(teaching_dir):
@@ -317,12 +317,12 @@ def parse_teaching(teaching_dir):
         with open(teaching_file, 'r', encoding='utf-8') as file:
             content = file.read()
         
-        # Extract front matter
+        # 提取 front matter
         front_matter_match = re.match(r'^---\s*(.*?)\s*---', content, re.DOTALL)
         if front_matter_match:
             front_matter = yaml.safe_load(front_matter_match.group(1))
             
-            # Extract teaching details
+            # 提取教学详情
             teaching_entry = {
                 "course": front_matter.get('title', ''),
                 "institution": front_matter.get('venue', ''),
@@ -336,7 +336,7 @@ def parse_teaching(teaching_dir):
     return teaching
 
 def parse_portfolio(portfolio_dir):
-    """Parse portfolio items from the _portfolio directory."""
+    """从 _portfolio 目录解析项目条目。"""
     portfolio = []
     
     if not os.path.exists(portfolio_dir):
@@ -346,12 +346,12 @@ def parse_portfolio(portfolio_dir):
         with open(portfolio_file, 'r', encoding='utf-8') as file:
             content = file.read()
         
-        # Extract front matter
+        # 提取 front matter
         front_matter_match = re.match(r'^---\s*(.*?)\s*---', content, re.DOTALL)
         if front_matter_match:
             front_matter = yaml.safe_load(front_matter_match.group(1))
             
-            # Extract portfolio details
+            # 提取项目详情
             portfolio_entry = {
                 "name": front_matter.get('title', ''),
                 "category": front_matter.get('collection', 'portfolio'),
@@ -365,17 +365,17 @@ def parse_portfolio(portfolio_dir):
     return portfolio
 
 def create_cv_json(md_file, config_file, repo_root, output_file):
-    """Create a JSON CV from markdown and other repository data."""
-    # Parse the markdown CV
+    """基于 Markdown 与仓库数据生成 JSON 简历。"""
+    # 解析 Markdown 简历
     sections = parse_markdown_cv(md_file)
     
-    # Parse config file
+    # 解析配置文件
     config = parse_config(config_file)
     
-    # Extract author information
+    # 提取作者信息
     author_info = extract_author_info(config)
     
-    # Create the JSON structure
+    # 组装 JSON 结构
     cv_json = {
         "basics": author_info,
         "work": parse_work_experience(sections.get('Work experience', '')),
@@ -386,33 +386,33 @@ def create_cv_json(md_file, config_file, repo_root, output_file):
         "references": []
     }
     
-    # Add publications
+    # 填充出版物
     cv_json["publications"] = parse_publications(os.path.join(repo_root, "_publications"))
     
-    # Add talks
+    # 填充演讲
     cv_json["presentations"] = parse_talks(os.path.join(repo_root, "_talks"))
     
-    # Add teaching
+    # 填充教学经历
     cv_json["teaching"] = parse_teaching(os.path.join(repo_root, "_teaching"))
     
-    # Add portfolio
+    # 填充项目条目
     cv_json["portfolio"] = parse_portfolio(os.path.join(repo_root, "_portfolio"))
     
-    # Extract languages and interests from config if available
+    # 若配置中存在语言/兴趣字段，则一并填充
     if 'languages' in config:
         cv_json["languages"] = config.get('languages', [])
     
     if 'interests' in config:
         cv_json["interests"] = config.get('interests', [])
     
-    # Write the JSON to a file
+    # 将 JSON 写入文件
     with open(output_file, 'w', encoding='utf-8') as file:
         json.dump(cv_json, file, indent=2, cls=DateTimeEncoder)
     
     print(f"Successfully converted {md_file} to {output_file}")
 
 def main():
-    """Main function to parse arguments and run the conversion."""
+    """主函数：解析参数并执行转换。"""
     parser = argparse.ArgumentParser(description='Convert markdown CV to JSON format')
     parser.add_argument('--input', '-i', required=True, help='Input markdown CV file')
     parser.add_argument('--output', '-o', required=True, help='Output JSON file')
@@ -420,7 +420,7 @@ def main():
     
     args = parser.parse_args()
     
-    # Get repository root (parent directory of the input file's directory)
+    # 获取仓库根目录（输入文件目录的上一级）
     repo_root = str(Path(args.input).parent.parent)
     
     create_cv_json(args.input, args.config, repo_root, args.output)

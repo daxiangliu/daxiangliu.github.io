@@ -11,8 +11,8 @@
 
 {% if site.category_archive.path %}
   {% comment %}
-    <!-- Sort alphabetically regardless of case e.g. a B c d E -->
-    <!-- modified from http://www.codeofclimber.ru/2015/sorting-site-tags-in-jekyll/ -->
+    <!-- 按字母排序（忽略大小写），例如 a B c d E -->
+    <!-- 改写自 http://www.codeofclimber.ru/2015/sorting-site-tags-in-jekyll/ -->
   {% endcomment %}
   {% capture page_categories %}{% for category in page.categories %}{{ category | downcase }}#{{ category }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
   {% assign category_hashes = (page_categories | split: ',' | sort:0) %}
