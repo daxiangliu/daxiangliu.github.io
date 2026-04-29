@@ -161,8 +161,48 @@
     });
   }
 
+  function setupTocToggle() {
+    var sidebar = document.querySelector("#main.has-toc .sidebar__right");
+    if (!sidebar) return;
+    var button = sidebar.querySelector(".toc-toggle-btn");
+    if (!button) return;
+    var icon = button.querySelector("i");
+    var text = button.querySelector(".toc-toggle-text");
+
+    var key = "toc-collapsed-state";
+    var isCollapsed = false;
+    try {
+      isCollapsed = localStorage.getItem(key) === "1";
+    } catch (e) {}
+
+    function render() {
+      sidebar.classList.toggle("toc-collapsed", isCollapsed);
+      button.setAttribute("aria-expanded", isCollapsed ? "false" : "true");
+      button.setAttribute("aria-label", isCollapsed ? "显示目录" : "隐藏目录");
+      button.setAttribute("title", isCollapsed ? "显示目录" : "隐藏目录");
+      if (text) {
+        text.textContent = isCollapsed ? "显示目录" : "隐藏目录";
+      }
+      if (icon) {
+        icon.classList.remove("fa-eye", "fa-eye-slash");
+        icon.classList.add(isCollapsed ? "fa-eye" : "fa-eye-slash");
+      }
+    }
+
+    button.addEventListener("click", function () {
+      isCollapsed = !isCollapsed;
+      try {
+        localStorage.setItem(key, isCollapsed ? "1" : "0");
+      } catch (e) {}
+      render();
+    });
+
+    render();
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     enhanceToc();
+    setupTocToggle();
     enhanceH2();
     enhanceCodeBlocks();
   });

@@ -1,4 +1,8 @@
 <aside class="sidebar__right">
+  <button class="toc-toggle-btn" type="button" aria-expanded="true" aria-label="隐藏目录" title="隐藏目录">
+    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+    <span class="sr-only toc-toggle-text">隐藏目录</span>
+  </button>
   <nav class="toc">
     <header>
       <h4 class="nav__title">
