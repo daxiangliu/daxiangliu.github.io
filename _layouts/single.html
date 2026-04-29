@@ -14,7 +14,7 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main">
+<div id="main" role="main"{% if page.toc %} class="has-toc"{% endif %}>
   {% include sidebar.html %}
   {% if page.toc %}
     {% include toc icon="list" %}
