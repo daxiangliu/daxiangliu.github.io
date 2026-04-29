@@ -80,6 +80,8 @@ author:
   xing             : # 用户名
   youtube          : # 用户名
   zhihu            : # 用户名
+  csdn             : # https://blog.csdn.net/weixin_63310665
+  bilibili         : # https://space.bilibili.com/1647293091
 
 # 出版物分类及对应标题
 publication_category:
