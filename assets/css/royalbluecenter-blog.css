@@ -52,9 +52,12 @@
 .page__content h2 {
   font-size: 1.3rem; /* 设置字体大小为1.3rem */
   border-bottom: 2px solid rgb(65, 105, 225); /* 设置背景色为蓝色 */
+  display: block;
+  line-height: 1.25;
 ; /* 设置底部边框*/
 }
-.page__content h2 span {
+.page__content h2 > span,
+.page__content h2 > .typora-h2-chip {
  display: inline-block; /* 设置为内联块元素 */
  font-weight: bold; /* 设置字体粗细为粗体 */
   background: rgb(65, 105, 225); /* 设置背景色为蓝色 */
@@ -391,4 +394,3 @@
 .cm-s-inner.CodeMirror {
   font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Liberation Mono", Menlo, Courier, monospace;
 }
-

@@ -1,0 +1,45 @@
+.codeblock-shell {
+  position: relative;
+  margin: 1.25rem 0;
+}
+
+.codeblock-toolbar {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.55rem;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+}
+
+.codeblock-lang {
+  padding: 0.12rem 0.42rem;
+  border-radius: 999px;
+  color: #e8edf7;
+  background: rgba(32, 44, 67, 0.85);
+  border: 1px solid rgba(170, 188, 214, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+.codeblock-copy {
+  border: 1px solid rgba(170, 188, 214, 0.28);
+  background: rgba(30, 43, 66, 0.88);
+  color: #ecf2ff;
+  border-radius: 0.38rem;
+  padding: 0.12rem 0.45rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.codeblock-copy:hover {
+  background: rgba(46, 67, 103, 0.92);
+}
+
+.codeblock-shell pre {
+  margin-top: 0;
+  padding-top: 2.1rem;
+}

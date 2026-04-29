@@ -93,6 +93,10 @@ layout: default
     {% endif %}
   </article>
 
+  {% if page.toc %}
+    {% include toc icon="list" %}
+  {% endif %}
+
   {% comment %}<!-- 仅在文章页且未禁用时显示相关文章 -->{% endcomment %}
   {% if page.id and page.related and site.related_posts.size > 0 %}
     <div class="page__related">
