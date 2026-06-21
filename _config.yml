@@ -29,6 +29,7 @@ author:
   location         : "中国"
   employer         :
   uri              : # 个人网址
+  # 我的联系邮箱
   email            : "liudaxiang.cs@foxmail.com"
 
   # 学术平台
