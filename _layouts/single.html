@@ -83,6 +83,10 @@ layout: default
           <p style="font-size: smaller"><a href="{{ page.codeurl }}"><i class="fab fa-github" aria-hidden="true"></i> 代码仓库</a></p>
         {% endif %}
 
+        {% if page.pdf_pending and page.paperurl == nil %}
+          <p><span class="btn btn--disabled" aria-disabled="true" title="论文 PDF 暂未公开"><i class="fas fa-file-pdf" aria-hidden="true"></i> 论文 PDF（暂未公开）</span></p>
+        {% endif %}
+
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 

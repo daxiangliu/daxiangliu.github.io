@@ -7,6 +7,7 @@ permalink: /publication/medstrucgen-ml/
 date: 2026-04-24
 status: "在投 / Under review"
 excerpt: "面向颞下颌关节疾病的结构化影像报告生成研究，采用解剖结构感知的多标签分类方法。 / This work investigates structured radiology report generation for temporomandibular disorders using anatomy-aware multi-label classification."
+pdf_pending: true
 codeurl: "https://github.com/daxiangliu/MedStrucGen-ML"
 ---
 

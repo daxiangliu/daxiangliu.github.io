@@ -45,6 +45,9 @@
       <p class="archive__item-excerpt" itemprop="description">{{ post.status }} · {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
     {% endif %}
     {% if post.codeurl %}<p><a href="{{ post.codeurl }}">代码仓库</a></p>{% endif %}
+    {% if post.pdf_pending and post.paperurl == nil %}
+      <p><span class="btn btn--disabled" aria-disabled="true" title="论文 PDF 暂未公开"><i class="fas fa-file-pdf" aria-hidden="true"></i> 论文 PDF（暂未公开）</span></p>
+    {% endif %}
     </li>
  </article>
 </div>
