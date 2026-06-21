@@ -22,7 +22,7 @@ repository               : "CLCNboss/clcnboss.github.io"
 #               如需深度自定义，可编辑 /_includes/author-profile.html
 author:
   # 个人基础信息
-  avatar           : "my_photo.jpg"
+  avatar           : "my_photo_katong.jpg"
   name             : "CLCNboss"
   pronouns         : # 示例："she/her"
   bio              : "CLCNboss的个人主页与项目展示"
