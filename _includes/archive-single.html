@@ -33,6 +33,9 @@
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
+    {% if post.title_cn %}
+      <p class="archive__item-excerpt" itemprop="alternativeHeadline"><strong>{{ post.title_cn }}</strong></p>
+    {% endif %}
     
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
@@ -41,7 +44,7 @@
         {% if post.collection == 'teaching' %}
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.collection == 'publications' and post.status %}
-          <p>{{ post.status }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+          <p>{{ post.status }} · {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
         {% elsif post.collection == 'publications' %}
           <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.date %}

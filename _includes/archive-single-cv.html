@@ -33,13 +33,16 @@
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h3>
+    {% if post.title_cn %}
+      <p class="archive__item-excerpt" itemprop="alternativeHeadline"><strong>{{ post.title_cn }}</strong></p>
+    {% endif %}
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
     {% if post.citation %}
       <p class="archive__item-excerpt" itemprop="description">{{ post.citation }}</p>
     {% elsif post.status %}
-      <p class="archive__item-excerpt" itemprop="description">{{ post.status }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+      <p class="archive__item-excerpt" itemprop="description">{{ post.status }} · {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
     {% endif %}
     {% if post.codeurl %}<p><a href="{{ post.codeurl }}">代码仓库</a></p>{% endif %}
     </li>
