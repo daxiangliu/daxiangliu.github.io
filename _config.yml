@@ -8,14 +8,14 @@
 # 基础站点设置
 locale                   : "zh-CN"
 site_theme               : "default" # 可选主题："default"、"air"、"sunrise"、"mint"、"dirt"、"contrast"
-title                    : "CLCNboss的个人主页"
+title                    : "Daxiang Liu的个人主页"
 title_separator          : "-"
-name                     : &name "CLCNboss"
-description              : &description "CLCNboss的个人主页与项目展示"
-url                      : https://clcnboss.github.io # 站点主域名，例如 "https://[你的 GitHub 用户名].github.io"
+name                     : &name "Daxiang Liu"
+description              : &description "Daxiang Liu的个人主页与项目展示"
+url                      : https://daxiangliu.github.io # 站点主域名，例如 "https://[你的 GitHub 用户名].github.io"
                                                            # 如果仓库不是用户名主页仓库，可用 "https://[用户名].github.io/[仓库名]"
 baseurl                  : "" # 子路径，例如 "/blog"；使用用户名主页仓库时通常留空
-repository               : "CLCNboss/clcnboss.github.io"
+repository               : "daxiangliu/daxiangliu.github.io"
 
 # 侧边栏作者信息：下面字段决定左侧个人卡片展示内容
 #               字段留空时，对应图标/链接不会显示
@@ -23,9 +23,9 @@ repository               : "CLCNboss/clcnboss.github.io"
 author:
   # 个人基础信息
   avatar           : "my_photo_katong.jpg"
-  name             : "CLCNboss"
+  name             : "Daxiang Liu"
   pronouns         : # 示例："she/her"
-  bio              : "CLCNboss的个人主页与项目展示"
+  bio              : "Master's student | AI for CAD/3D: multimodal retrieval & generation | Medical image analysis"
   location         : "中国"
   employer         :
   uri              : # 个人网址
@@ -50,7 +50,7 @@ author:
   bitbucket        : # 用户名
   codepen          : # 用户名
   dribbble         : # 用户名
-  github           : "CLCNboss"
+  github           : "daxiangliu"
   kaggle           : # 用户名
   stackoverflow    : # 用户编号，或“编号/用户名”（如 "1" 或 "1/jeff-atwood"）
 

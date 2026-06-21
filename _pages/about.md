@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "CLCNboss"
+title: "Daxiang Liu"
 author_profile: true
 redirect_from: 
   - /about/
@@ -33,5 +33,4 @@ redirect_from:
 ## 联系方式
 
 - 邮箱：`clcnboss@qq.com`
-- GitHub：`https://github.com/CLCNboss`
-
+- GitHub：`https://github.com/daxiangliu`
