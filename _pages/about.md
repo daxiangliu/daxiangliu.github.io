@@ -22,7 +22,7 @@ redirect_from:
 
 ## 最新动态
 
-- 2026-04：一篇医学图像分析方向论文在投。
+- 2026-04：[Structured Radiology Report Generation for Temporomandibular Disorders via Anatomy-Aware Multi-Label Classification](/publication/medstrucgen-ml/) 在投，代码仓库已公开。
 - 2026-04：个人主页完成中文化改造。
 
 

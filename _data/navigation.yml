@@ -7,9 +7,8 @@
 #      第一种是 Markdown 版简历，第二种是 JSON 生成版简历。
 
 main:
-  # 论文页当前仅包含模板示例，待补充真实内容后恢复导航。
-  # - title: "论文"
-  #   url: /publications/
+  - title: "论文"
+    url: /publications/
 
   - title: "博客"
     url: /year-archive/

@@ -22,6 +22,12 @@ redirect_from:
 * CAD 表示学习与生成
 * 医学图像分析
 
+论文与出版物
+======
+<ul>{% for post in site.publications reversed %}
+  {% include archive-single-cv.html %}
+{% endfor %}</ul>
+
 荣誉与奖项
 ======
 * 2024.07：东北三省数学建模竞赛一等奖
