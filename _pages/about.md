@@ -24,7 +24,6 @@ redirect_from:
 
 - 2026-05：[Text-to-CAD Retrieval: a Strong Baseline](/publication/text-to-cad-retrieval/) 已公开为 arXiv 预印本。
 - 2026-04：[Structured Radiology Report Generation for Temporomandibular Disorders via Anatomy-Aware Multi-Label Classification](/publication/medstrucgen-ml/) 在投，代码仓库已公开。
-- 2026-04：个人主页完成中文化改造。
 
 
 ## 个人兴趣
