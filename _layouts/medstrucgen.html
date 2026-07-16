@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7fbff">
+    <title>{{ page.title }} | MedStrucGen-ML</title>
+    <meta name="description" content="{{ page.excerpt | strip_html | escape }}">
+    <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/medstrucgen-project.css' | relative_url }}">
+  </head>
+  <body>
+    <header class="project-header">
+      <a class="project-brand" href="#top" aria-label="MedStrucGen-ML home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>MedStrucGen-ML</span>
+      </a>
+      <nav class="project-nav" aria-label="Project navigation">
+        <a href="#overview">Overview</a>
+        <a href="#contributions">Contributions</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#citation">Citation</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-atmosphere" aria-hidden="true">
+          <i class="orb orb-one"></i>
+          <i class="orb orb-two"></i>
+          <i class="orb orb-three"></i>
+          <span class="anatomy-token token-disc">Articular disc</span>
+          <span class="anatomy-token token-condyle">Condyle</span>
+          <span class="anatomy-token token-cavity">Joint cavity</span>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Structured · Verifiable · Anatomy-aware</p>
+          <h1>MedStrucGen<span>-ML</span></h1>
+          <p class="hero-subtitle">Structured Radiology Report Generation by<br class="desktop-break"> Anatomy-Aware Multi-Label Classification</p>
+          <div class="authors" aria-label="Authors">
+            <span>Xiaoling Luo</span><span>·</span><a href="{{ '/' | relative_url }}">Daxiang Liu</a><span>·</span><span>Guangfa Tang</span><span>·</span><span>Xi Zhou</span><span>·</span><span>Hongbo Le</span><span>·</span><span>Honghu Pan<sup>*</sup></span>
+          </div>
+          <p class="affiliations">Shenzhen University · South China Hospital, Shenzhen University · Hunan University</p>
+          <p class="author-note"><sup>*</sup> Corresponding author · Manuscript under review</p>
+
+          <div class="resource-links" aria-label="Project resources">
+            <button class="resource-button coming-soon" type="button" data-coming-soon="The paper will be available after public release.">
+              <span aria-hidden="true">▤</span> Paper <small>Coming soon</small>
+            </button>
+            <a class="resource-button primary" href="{{ page.codeurl }}" target="_blank" rel="noreferrer">
+              <span aria-hidden="true">⌘</span> Code
+            </a>
+            <button class="resource-button coming-soon" type="button" data-coming-soon="The clinical dataset is being prepared for release.">
+              <span aria-hidden="true">◫</span> Dataset <small>Coming soon</small>
+            </button>
+          </div>
+        </div>
+
+        <div class="pipeline-banner" aria-label="MedStrucGen-ML workflow">
+          <svg viewBox="0 0 1000 260" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M160 130 C245 130 255 130 340 130"></path>
+            <path d="M410 130 C495 130 505 130 590 130"></path>
+            <path d="M660 130 C745 130 755 130 840 130"></path>
+          </svg>
+          <div class="pipeline-node node-input"><span>01</span><strong>TMJ MRI</strong><small>Open / close state</small></div>
+          <div class="pipeline-node node-local"><span>02</span><strong>DGLR</strong><small>Anatomical evidence</small></div>
+          <div class="pipeline-node node-align"><span>03</span><strong>CSCA</strong><small>Label-region alignment</small></div>
+          <div class="pipeline-node node-report"><span>04</span><strong>Structured report</strong><small>Verifiable findings</small></div>
+          <i class="flow-dot dot-one" aria-hidden="true"></i>
+          <i class="flow-dot dot-two" aria-hidden="true"></i>
+          <i class="flow-dot dot-three" aria-hidden="true"></i>
+        </div>
+      </section>
+
+      <section id="overview" class="section overview-section">
+        <p class="section-kicker">Overview</p>
+        <h2>From unconstrained prose to clinically verifiable findings.</h2>
+        <p class="section-lead">Free-text generation can sound fluent while introducing ambiguity, hallucinated findings, or weak links to localized visual evidence. MedStrucGen-ML predicts discrete clinical findings and maps them to standardized templates, making every conclusion easier to trace and verify.</p>
+        <div class="stat-grid" aria-label="Project highlights">
+          <article><strong>11</strong><span>diagnostic labels</span></article>
+          <article><strong>4</strong><span>anatomical structures</span></article>
+          <article><strong>93.2%</strong><span>best mAP</span></article>
+          <article><strong>2</strong><span>mandibular states</span></article>
+        </div>
+        <div class="comparison-card">
+          <div class="comparison-copy">
+            <span class="figure-tag">Why structured reporting?</span>
+            <h3>Clinical statements should be explicit, not implied.</h3>
+            <p>The framework turns anatomy-grounded predictions into a consistent report, reducing contradictions and making positive and negative findings directly inspectable.</p>
+          </div>
+          <figure>
+            <img src="{{ '/assets/projects/medstrucgen/structured-vs-free-text.png' | relative_url }}" alt="Comparison between an error-prone free-text report and the proposed structured radiology report" loading="lazy">
+            <figcaption>Free-text generation versus the proposed structured formulation.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="contributions" class="section contributions-section">
+        <p class="section-kicker">Core Contributions</p>
+        <h2>What MedStrucGen-ML brings</h2>
+        <div class="contribution-grid">
+          <article>
+            <span>01</span>
+            <h3>Verifiable report generation</h3>
+            <p>Reframes radiology report generation as multi-label prediction followed by deterministic template population.</p>
+            <a href="#overview" aria-label="Read about structured reporting">↗</a>
+          </article>
+          <article class="featured">
+            <span>02</span>
+            <h3>Detection-guided local evidence</h3>
+            <p>DGLR extracts fine-grained features from predefined TMJ regions while retaining both visual and spatial cues.</p>
+            <a href="#method" aria-label="Read about DGLR">↗</a>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Reliable anatomy-label alignment</h3>
+            <p>CSCA uses anatomical mapping and confidence gating to suppress unreliable detections and refine label semantics.</p>
+            <a href="#method" aria-label="Read about CSCA">↗</a>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Dedicated clinical TMJ study</h3>
+            <p>A multi-label MRI dataset covers coexisting abnormalities across open- and closed-mouth states.</p>
+            <a href="#dataset" aria-label="Read about the dataset">↗</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="method" class="section method-section">
+        <p class="section-kicker">Method</p>
+        <h2>Global context, local anatomy, structured output.</h2>
+        <div class="method-steps">
+          <article><span>Stage 1</span><h3>Multi-grained extraction</h3><p>A ResNet or ViT backbone captures global context while DGLR isolates anatomy-specific local evidence from detected regions.</p></article>
+          <article><span>Stage 2</span><h3>Semantic refinement</h3><p>Self-attention fuses image, local, and label tokens; gated CSCA then aligns each label with its mapped anatomical structure.</p></article>
+          <article><span>Stage 3</span><h3>Template population</h3><p>Predicted findings are resolved across mandibular states and populated into a standardized, clinically readable report.</p></article>
+        </div>
+        <figure class="paper-figure wide-figure">
+          <img src="{{ '/assets/projects/medstrucgen/framework.png' | relative_url }}" alt="Overall framework showing global feature extraction, DGLR, self-attention fusion, CSCA, and structured report population" loading="lazy">
+          <figcaption><strong>Overall framework.</strong> DGLR grounds subtle lesions in anatomical regions; CSCA strengthens reliable label-region interaction.</figcaption>
+        </figure>
+      </section>
+
+      <section id="results" class="section results-section">
+        <p class="section-kicker">Experiments</p>
+        <h2>Consistent gains across CNN and ViT backbones.</h2>
+        <div class="result-layout">
+          <div class="metric-stack">
+            <article><small>ViT-L/16</small><strong>93.2%</strong><span>mAP</span></article>
+            <article><small>vs. CSRA</small><strong>+18.9</strong><span>mAP points</span></article>
+            <article><small>Top-3 · ViT-L/16</small><strong>78.8%</strong><span>OF1</span></article>
+            <article><small>DGLR + CSCA</small><strong>+9.0</strong><span>mAP points over the ResNet-101 baseline</span></article>
+          </div>
+          <div class="result-copy">
+            <h3>Anatomical constraints remain effective across architectures.</h3>
+            <p>The proposed framework achieves the best mAP under every evaluated backbone. The largest improvement appears with vision transformers, where explicit local evidence and class-specific alignment compensate for weaker anatomical inductive bias.</p>
+            <ul>
+              <li>DGLR improves localization of subtle pathological regions.</li>
+              <li>Confidence-gated CSCA prevents noisy detections from dominating predictions.</li>
+              <li>Structured outputs avoid contradictions visible in free-text baselines.</li>
+            </ul>
+          </div>
+        </div>
+        <figure class="paper-figure qualitative-figure">
+          <img src="{{ '/assets/projects/medstrucgen/qualitative-results.png' | relative_url }}" alt="Qualitative comparison of TMJ diagnostic reports generated by the baseline, LHR-RFL, and the proposed method" loading="lazy">
+          <figcaption><strong>Qualitative comparison.</strong> The proposed method correctly identifies coexisting abnormalities in both closed- and open-mouth states while avoiding false positives and omissions.</figcaption>
+        </figure>
+      </section>
+
+      <section id="dataset" class="section dataset-section">
+        <div class="dataset-copy">
+          <p class="section-kicker">Clinical Dataset</p>
+          <h2>Anatomy-aware labels for two functional states.</h2>
+          <p>Representative 2D TMJ MRI slices are annotated by clinical experts. The label space captures joint cavity, condyle, articular disc, and articular tubercle findings across closed- and open-mouth states.</p>
+          <button class="resource-button primary coming-soon" type="button" data-coming-soon="The clinical dataset is being curated and will be released here.">
+            <span aria-hidden="true">◫</span> Dataset <small>Coming soon</small>
+          </button>
+        </div>
+        <div class="dataset-board" aria-label="Dataset label groups">
+          <article><span class="dot yellow"></span><strong>Joint cavity</strong><small>Effusion / normal</small></article>
+          <article><span class="dot green"></span><strong>Condyle</strong><small>Bone erosion / normal</small></article>
+          <article><span class="dot coral"></span><strong>Articular disc</strong><small>Forward displacement · reducibility</small></article>
+          <article><span class="dot blue"></span><strong>Articular tubercle</strong><small>Bone integrity · functional position</small></article>
+        </div>
+      </section>
+
+      <section id="citation" class="section citation-section">
+        <p class="section-kicker">Citation</p>
+        <h2>Citation information will follow public release.</h2>
+        <div class="citation-card">
+          <p><strong>X. Luo, D. Liu, G. Tang, X. Zhou, H. Le, and H. Pan.</strong><br>“Structured Radiology Report Generation by Anatomy-Aware Multi-Label Classification.” Manuscript under review, 2026.</p>
+          <button class="copy-citation" type="button" data-citation="X. Luo, D. Liu, G. Tang, X. Zhou, H. Le, and H. Pan. Structured Radiology Report Generation by Anatomy-Aware Multi-Label Classification. Manuscript under review, 2026.">Copy citation</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="project-footer">
+      <div><strong>MedStrucGen-ML</strong><span>Reliable structured radiology reporting.</span></div>
+      <div><a href="{{ '/' | relative_url }}">Daxiang Liu</a><a href="mailto:liudaxiang.cs@foxmail.com">Contact</a><a href="{{ page.codeurl }}" target="_blank" rel="noreferrer">GitHub</a></div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" aria-hidden="true"><strong>Coming soon</strong><span></span></div>
+    <script src="{{ '/assets/js/medstrucgen-project.js' | relative_url }}" defer></script>
+  </body>
+</html>
