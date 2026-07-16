@@ -101,7 +101,8 @@ h1, h2, h3 { line-height: 1.12; letter-spacing: -0.035em; }
 .hero h1 { margin-bottom: 30px; font-size: clamp(3.2rem, 6.6vw, 5.75rem); font-weight: 850; line-height: 1.06; letter-spacing: .015em; }
 .hero h1 span { color: var(--teal); }
 .hero-subtitle { max-width: 950px; margin: 0 auto 22px; color: var(--ink); font-size: clamp(1.2rem, 2.25vw, 2rem); font-weight: 650; line-height: 1.25; letter-spacing: -.025em; }
-.authors { display: flex; max-width: 1050px; flex-wrap: wrap; justify-content: center; gap: 3px 8px; margin: 0 auto 7px; color: var(--teal-dark); font-weight: 700; }
+.authors { display: flex; width: max-content; max-width: 100%; flex-wrap: nowrap; justify-content: center; gap: 3px 8px; margin: 0 auto 7px; color: var(--teal-dark); font-size: clamp(.78rem, 1.05vw, 1rem); font-weight: 700; white-space: nowrap; }
+.authors > span, .authors > a { flex: 0 0 auto; white-space: nowrap; }
 .authors a { text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--teal) 35%, transparent); text-underline-offset: 3px; }
 .affiliations { margin-bottom: 2px; color: var(--muted); font-size: .92rem; }
 .author-note { color: var(--muted); font-size: .78rem; }
@@ -232,7 +233,7 @@ figcaption { margin-top: 12px; color: var(--muted); font-size: .78rem; }
   .desktop-break { display: none; }
   .hero { padding-top: 48px; }
   .hero h1 { margin-bottom: 22px; font-size: clamp(2.65rem, 12.5vw, 4.1rem); letter-spacing: .008em; }
-  .authors { font-size: .82rem; }
+  .authors { width: auto; flex-wrap: wrap; font-size: .82rem; white-space: normal; }
   .affiliations { font-size: .78rem; }
   .anatomy-token { display: none; }
   .pipeline-heading { margin-top: 54px; }
