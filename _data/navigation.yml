@@ -7,10 +7,10 @@
 #      第一种是 Markdown 版简历，第二种是 JSON 生成版简历。
 
 main:
-  - title: "论文"
+  - title: "研究成果"
     url: /publications/
 
-  - title: "博客"
+  - title: "文章"
     url: /year-archive/
 
   # - title: "旅游"
