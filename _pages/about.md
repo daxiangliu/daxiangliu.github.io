@@ -7,36 +7,29 @@ classes:
   - homepage-page
 custom_css:
   - /assets/css/homepage.css
+custom_js:
+  - /assets/js/homepage-language.js
 redirect_from:
   - /about/
   - /about.html
 ---
 
 <div class="home-shell">
-  <section class="home-hero" aria-labelledby="home-title">
-    <div class="home-hero__copy">
-      <p class="home-eyebrow">Daxiang Liu · Academic Homepage</p>
-      <h1 id="home-title">CAD / 3D 智能与<br>多模态学习</h1>
-      <p class="home-lead">你好，我是 Daxiang Liu，目前在深圳大学攻读计算机科学与技术硕士学位。我的研究以 <strong>CAD / 3D 智能</strong>为主线，关注跨模态检索、表示学习与生成，并探索人工智能在医学图像分析中的应用。</p>
-      <div class="home-actions" aria-label="主要链接">
-        <a class="home-button home-button--primary" href="{{ '/publications/' | relative_url }}">查看研究成果 <span aria-hidden="true">→</span></a>
-        <a class="home-button" href="https://github.com/daxiangliu" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="home-button" href="{{ '/cv/' | relative_url }}">CV</a>
-      </div>
-      <p class="home-affiliation"><span aria-hidden="true"></span> Shenzhen University · Shenzhen, China</p>
+  <section class="home-intro" aria-labelledby="home-intro-title" data-language-switcher>
+    <h1 id="home-intro-title">Hi, I am Daxiang Liu.</h1>
+
+    <div class="language-tabs" role="tablist" aria-label="个人介绍语言">
+      <button class="language-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="intro-zh" id="tab-zh" data-language="zh">中文</button>
+      <button class="language-tab" type="button" role="tab" aria-selected="false" aria-controls="intro-en" id="tab-en" data-language="en">English</button>
     </div>
 
-    <aside class="research-summary" aria-labelledby="current-focus-title">
-      <p class="research-summary__label">Current focus</p>
-      <h2 id="current-focus-title">Text-to-CAD Retrieval</h2>
-      <p class="research-summary__intro">用自然语言从大规模三维模型库中检索语义相关、可复用的 CAD 模型。</p>
-      <dl class="research-summary__list">
-        <div><dt>01</dt><dd>跨模态检索</dd></div>
-        <div><dt>02</dt><dd>CAD 表示学习</dd></div>
-        <div><dt>03</dt><dd>三维模型生成</dd></div>
-      </dl>
-      <p class="research-summary__footer">Natural language · CAD sequence · 3D geometry</p>
-    </aside>
+    <div class="language-panel is-active" id="intro-zh" role="tabpanel" aria-labelledby="tab-zh" data-language-panel="zh">
+      <p>你好，我是 Daxiang Liu，目前在深圳大学计算机科学与技术专业攻读硕士学位，本科毕业于哈尔滨理工大学软件工程专业。我的研究兴趣主要集中在面向 <strong>CAD / 3D</strong> 场景的人工智能方法，目前关注 <strong>Text-to-CAD 跨模态检索、CAD 表示学习与生成</strong>，同时探索医学图像分析与结构化影像报告生成。</p>
+    </div>
+
+    <div class="language-panel" id="intro-en" role="tabpanel" aria-labelledby="tab-en" data-language-panel="en" hidden>
+      <p>Hi, I am Daxiang Liu, a master's student in Computer Science and Technology at Shenzhen University. I received my bachelor's degree in Software Engineering from Harbin University of Science and Technology. My research focuses on AI for <strong>CAD / 3D</strong>, particularly <strong>Text-to-CAD cross-modal retrieval, CAD representation learning, and generation</strong>, with additional interests in medical image analysis and structured radiology report generation.</p>
+    </div>
   </section>
 
   <section class="home-section" aria-labelledby="focus-title">
