@@ -15,8 +15,8 @@ redirect_from:
 <div class="home-shell">
   <section class="home-hero" aria-labelledby="home-title">
     <div class="home-hero__copy">
-      <p class="home-eyebrow">AI · CAD / 3D · Medical Imaging</p>
-      <h1 id="home-title">让自然语言连接<br><span>可复用的三维设计</span></h1>
+      <p class="home-eyebrow">Daxiang Liu · Academic Homepage</p>
+      <h1 id="home-title">CAD / 3D 智能与<br>多模态学习</h1>
       <p class="home-lead">你好，我是 Daxiang Liu，目前在深圳大学攻读计算机科学与技术硕士学位。我的研究以 <strong>CAD / 3D 智能</strong>为主线，关注跨模态检索、表示学习与生成，并探索人工智能在医学图像分析中的应用。</p>
       <div class="home-actions" aria-label="主要链接">
         <a class="home-button home-button--primary" href="{{ '/publications/' | relative_url }}">查看研究成果 <span aria-hidden="true">→</span></a>
@@ -26,25 +26,17 @@ redirect_from:
       <p class="home-affiliation"><span aria-hidden="true"></span> Shenzhen University · Shenzhen, China</p>
     </div>
 
-    <div class="blueprint" aria-label="Text-to-CAD 研究概念图">
-      <div class="blueprint__topline">
-        <span>RESEARCH / 01</span>
-        <span>TEXT → CAD</span>
-      </div>
-      <div class="blueprint__query">“a compact bracket with two mounting holes”</div>
-      <div class="blueprint__flow" aria-hidden="true"><span></span><i></i></div>
-      <div class="blueprint__model" aria-hidden="true">
-        <span class="cad-block cad-block--one"></span>
-        <span class="cad-block cad-block--two"></span>
-        <span class="cad-block cad-block--three"></span>
-        <span class="cad-hole cad-hole--one"></span>
-        <span class="cad-hole cad-hole--two"></span>
-      </div>
-      <div class="blueprint__footer">
-        <span>semantic retrieval</span>
-        <span>procedural + geometric</span>
-      </div>
-    </div>
+    <aside class="research-summary" aria-labelledby="current-focus-title">
+      <p class="research-summary__label">Current focus</p>
+      <h2 id="current-focus-title">Text-to-CAD Retrieval</h2>
+      <p class="research-summary__intro">用自然语言从大规模三维模型库中检索语义相关、可复用的 CAD 模型。</p>
+      <dl class="research-summary__list">
+        <div><dt>01</dt><dd>跨模态检索</dd></div>
+        <div><dt>02</dt><dd>CAD 表示学习</dd></div>
+        <div><dt>03</dt><dd>三维模型生成</dd></div>
+      </dl>
+      <p class="research-summary__footer">Natural language · CAD sequence · 3D geometry</p>
+    </aside>
   </section>
 
   <section class="home-section" aria-labelledby="focus-title">

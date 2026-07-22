@@ -28,11 +28,10 @@
 .home-hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.88fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: center;
-  min-height: 520px;
-  padding: clamp(3rem, 7vw, 6.5rem) 0 clamp(3.6rem, 7vw, 6rem);
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  align-items: start;
+  padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(3.8rem, 7vw, 5.5rem);
 }
 
 .home-hero::after {
@@ -59,14 +58,10 @@
 .home-hero h1 {
   margin: 0;
   color: var(--home-navy);
-  font-size: clamp(2.55rem, 5.2vw, 4.65rem);
-  font-weight: 800;
-  letter-spacing: -0.055em;
-  line-height: 1.08;
-}
-
-.home-hero h1 span {
-  color: var(--home-blue);
+  font-size: clamp(2.25rem, 4vw, 3.35rem);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  line-height: 1.18;
 }
 
 .home-lead {
@@ -134,125 +129,74 @@
   box-shadow: 0 0 0 4px rgba(76, 168, 120, 0.12);
 }
 
-.blueprint {
-  position: relative;
-  min-height: 390px;
-  overflow: hidden;
-  padding: 1.1rem;
-  border: 1px solid rgba(82, 173, 200, 0.4);
-  border-radius: 20px;
-  background-color: #123b4a;
-  background-image:
-    linear-gradient(rgba(111, 200, 223, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(111, 200, 223, 0.09) 1px, transparent 1px),
-    linear-gradient(rgba(111, 200, 223, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(111, 200, 223, 0.035) 1px, transparent 1px);
-  background-position: center;
-  background-size: 48px 48px, 48px 48px, 12px 12px, 12px 12px;
-  box-shadow: 0 30px 60px rgba(18, 59, 74, 0.2);
+.research-summary {
+  margin-top: 1.25rem;
+  padding: 0.2rem 0 0.2rem clamp(1.4rem, 3vw, 2.25rem);
+  border-left: 1px solid var(--home-line);
 }
 
-.blueprint::after {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border: 1px solid rgba(185, 232, 242, 0.12);
-  border-radius: 12px;
-  pointer-events: none;
+.research-summary__label {
+  margin: 0 0 1.15rem;
+  color: var(--home-blue);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
-.blueprint__topline,
-.blueprint__footer {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  color: rgba(214, 244, 250, 0.7);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
+.research-summary h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--home-navy);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
 }
 
-.blueprint__query {
-  position: relative;
-  z-index: 2;
-  max-width: 78%;
-  margin: 3rem auto 0;
-  padding: 0.7rem 0.9rem;
-  border: 1px solid rgba(137, 217, 236, 0.32);
-  border-radius: 7px;
-  background: rgba(2, 24, 32, 0.52);
-  color: #d6f4fa;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.69rem;
+.research-summary__intro {
+  margin: 0.8rem 0 1.4rem;
+  color: var(--home-muted);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.research-summary__list {
+  margin: 0;
+}
+
+.research-summary__list > div {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.65rem;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--home-line);
+}
+
+.research-summary__list dt,
+.research-summary__list dd {
+  margin: 0;
+  font-size: 0.75rem;
   line-height: 1.45;
-  text-align: center;
 }
 
-.blueprint__flow {
-  position: relative;
-  z-index: 2;
-  width: 1px;
-  height: 48px;
-  margin: 0 auto;
-  background: rgba(137, 217, 236, 0.48);
+.research-summary__list dt {
+  color: var(--home-blue);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 800;
 }
 
-.blueprint__flow i {
-  position: absolute;
-  bottom: -1px;
-  left: -3px;
-  width: 7px;
-  height: 7px;
-  border-right: 1px solid #89d9ec;
-  border-bottom: 1px solid #89d9ec;
-  transform: rotate(45deg);
+.research-summary__list dd {
+  color: var(--home-navy);
+  font-weight: 700;
 }
 
-.blueprint__model {
-  position: relative;
-  z-index: 2;
-  width: 190px;
-  height: 145px;
-  margin: 0 auto;
-  transform: perspective(600px) rotateX(57deg) rotateZ(-34deg);
-  transform-style: preserve-3d;
-}
-
-.cad-block {
-  position: absolute;
-  display: block;
-  border: 2px solid #89d9ec;
-  background: rgba(82, 173, 200, 0.09);
-  box-shadow: inset 0 0 18px rgba(137, 217, 236, 0.08);
-}
-
-.cad-block--one { inset: 22px 8px 20px 8px; }
-.cad-block--two { top: 0; left: 28px; width: 35px; height: 145px; }
-.cad-block--three { top: 0; right: 28px; width: 35px; height: 145px; }
-
-.cad-hole {
-  position: absolute;
-  top: 54px;
-  width: 34px;
-  height: 34px;
-  border: 2px solid #89d9ec;
-  border-radius: 50%;
-  background: #123b4a;
-  box-shadow: 0 0 0 5px rgba(137, 217, 236, 0.08);
-}
-
-.cad-hole--one { left: 28px; }
-.cad-hole--two { right: 28px; }
-
-.blueprint__footer {
-  position: absolute;
-  right: 1.1rem;
-  bottom: 1.1rem;
-  left: 1.1rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(185, 232, 242, 0.16);
-  letter-spacing: 0.06em;
+.research-summary__footer {
+  margin: 1rem 0 0;
+  color: var(--home-muted);
+  font-size: 0.62rem;
+  line-height: 1.6;
 }
 
 .home-section {
@@ -658,9 +602,12 @@
     min-height: 0;
   }
 
-  .blueprint {
-    width: min(100%, 560px);
-    min-height: 360px;
+  .research-summary {
+    max-width: 38rem;
+    margin-top: 0;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--home-line);
+    border-left: 0;
   }
 
   .section-heading,
@@ -697,32 +644,12 @@
   }
 
   .home-hero h1 {
-    font-size: clamp(2.25rem, 12vw, 3.2rem);
+    font-size: clamp(2.05rem, 10vw, 2.75rem);
   }
 
   .home-lead {
     line-height: 1.75;
   }
-
-  .blueprint {
-    min-height: 330px;
-    border-radius: 14px;
-  }
-
-  .blueprint__query {
-    max-width: 92%;
-    margin-top: 2.2rem;
-  }
-
-  .blueprint__model {
-    width: 160px;
-    height: 125px;
-  }
-
-  .cad-block--two { left: 23px; height: 125px; }
-  .cad-block--three { right: 23px; height: 125px; }
-  .cad-hole--one { left: 23px; }
-  .cad-hole--two { right: 23px; }
 
   .focus-grid {
     grid-template-columns: 1fr;
