@@ -22,6 +22,7 @@ html {
 @media (min-width: 1200px) {
   #main.reference-home-main {
     max-width: 1800px;
+    padding-right: 3rem;
   }
 
   #main.reference-home-main .sidebar {
@@ -30,6 +31,32 @@ html {
     max-width: none;
     overflow: visible;
     padding-top: 0;
+  }
+
+  #main.reference-home-main .author__avatar img {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  #main.reference-home-main .sidebar .author__name {
+    margin-top: 0.85rem;
+    margin-bottom: 0.55rem;
+    color: #012f63;
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  #main.reference-home-main .sidebar p,
+  #main.reference-home-main .sidebar li,
+  #main.reference-home-main .sidebar .author__urls a {
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+
+  #main.reference-home-main .sidebar .author__urls a {
+    margin-bottom: 0.32rem;
+    padding: 0.12rem 0;
   }
 }
 
