@@ -3,6 +3,9 @@ permalink: /
 title: ""
 excerpt: "Daxiang Liu，深圳大学计算机科学与技术硕士研究生，研究方向包括 Text-to-CAD 跨模态检索、CAD 表示学习与生成，以及医学图像分析。"
 author_profile: true
+classes:
+  - reference-homepage
+main_class: reference-home-main
 custom_css:
   - /assets/css/homepage.css
 custom_js:
