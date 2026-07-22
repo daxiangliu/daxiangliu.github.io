@@ -3,8 +3,6 @@ permalink: /
 title: ""
 excerpt: "Daxiang Liu，深圳大学计算机科学与技术硕士研究生，研究方向包括 Text-to-CAD 跨模态检索、CAD 表示学习与生成，以及医学图像分析。"
 author_profile: true
-classes:
-  - homepage-page
 custom_css:
   - /assets/css/homepage.css
 custom_js:
@@ -14,134 +12,141 @@ redirect_from:
   - /about.html
 ---
 
-<div class="home-shell">
-  <section class="home-intro" aria-labelledby="home-intro-title" data-language-switcher>
-    <h1 id="home-intro-title">Hi, I am Daxiang Liu.</h1>
+<span class="anchor" id="about-me"></span>
 
-    <div class="language-tabs" role="tablist" aria-label="个人介绍语言">
-      <button class="language-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="intro-zh" id="tab-zh" data-language="zh">中文</button>
-      <button class="language-tab" type="button" role="tab" aria-selected="false" aria-controls="intro-en" id="tab-en" data-language="en">English</button>
+<h1 class="reference-home-title">Hi, I am Daxiang Liu.</h1>
+
+<div class="language-switcher" id="research-language-switcher">
+  <div class="language-tabs" role="tablist" aria-label="Research introduction language selector">
+    <button class="lang-tab active" type="button" data-lang="en" role="tab" aria-selected="true">English</button>
+    <button class="lang-tab" type="button" data-lang="zh" role="tab" aria-selected="false">中文</button>
+  </div>
+
+  <div class="lang-panel active" data-lang-panel="en" role="tabpanel">
+    <div class="research-intro">
+      <p>Welcome to my homepage! I am currently a master's student in Computer Science and Technology at <a href="https://www.szu.edu.cn/" target="_blank" rel="noopener noreferrer">Shenzhen University</a>. I received my bachelor's degree in Software Engineering from Harbin University of Science and Technology. My research interests mainly focus on <strong>AI for CAD / 3D, Text-to-CAD cross-modal retrieval, CAD representation learning and generation</strong>, with additional interests in medical image analysis and structured radiology report generation.</p>
     </div>
+  </div>
 
-    <div class="language-panel is-active" id="intro-zh" role="tabpanel" aria-labelledby="tab-zh" data-language-panel="zh">
-      <p>你好，我是 Daxiang Liu，目前在深圳大学计算机科学与技术专业攻读硕士学位，本科毕业于哈尔滨理工大学软件工程专业。我的研究兴趣主要集中在面向 <strong>CAD / 3D</strong> 场景的人工智能方法，目前关注 <strong>Text-to-CAD 跨模态检索、CAD 表示学习与生成</strong>，同时探索医学图像分析与结构化影像报告生成。</p>
+  <div class="lang-panel" data-lang-panel="zh" role="tabpanel">
+    <div class="research-intro">
+      <p>欢迎来到我的主页！我目前在<a href="https://www.szu.edu.cn/" target="_blank" rel="noopener noreferrer">深圳大学</a>计算机科学与技术专业攻读硕士学位，本科毕业于哈尔滨理工大学软件工程专业。我的研究兴趣主要聚焦于<strong>面向 CAD / 3D 的人工智能方法、Text-to-CAD 跨模态检索、CAD 表示学习与生成</strong>，同时关注医学图像分析与结构化影像报告生成。</p>
     </div>
-
-    <div class="language-panel" id="intro-en" role="tabpanel" aria-labelledby="tab-en" data-language-panel="en" hidden>
-      <p>Hi, I am Daxiang Liu, a master's student in Computer Science and Technology at Shenzhen University. I received my bachelor's degree in Software Engineering from Harbin University of Science and Technology. My research focuses on AI for <strong>CAD / 3D</strong>, particularly <strong>Text-to-CAD cross-modal retrieval, CAD representation learning, and generation</strong>, with additional interests in medical image analysis and structured radiology report generation.</p>
-    </div>
-  </section>
-
-  <section class="home-section" aria-labelledby="focus-title">
-    <div class="section-heading">
-      <div>
-        <p class="section-kicker">Research focus</p>
-        <h2 id="focus-title">研究方向</h2>
-      </div>
-      <p>从设计语义到几何结构，研究多模态信息如何共同描述、检索并生成复杂对象。</p>
-    </div>
-
-    <div class="focus-grid">
-      <article class="focus-card focus-card--primary">
-        <div class="focus-card__index">01 / CORE</div>
-        <h3>CAD / 3D Intelligence</h3>
-        <p>围绕工程设计模型的检索、理解与生成，连接自然语言、构造序列和三维几何表示。</p>
-        <ul>
-          <li>Text-to-CAD 跨模态检索</li>
-          <li>CAD 表示学习与生成</li>
-          <li>多模态几何理解</li>
-        </ul>
-      </article>
-
-      <article class="focus-card">
-        <div class="focus-card__index">02 / APPLIED</div>
-        <h3>Medical AI</h3>
-        <p>面向临床影像的结构化理解，让模型输出更具可解释性、可核查性与实际应用价值。</p>
-        <ul>
-          <li>医学图像分析</li>
-          <li>解剖感知表征</li>
-          <li>结构化影像报告</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="home-section" aria-labelledby="work-title">
-    <div class="section-heading section-heading--works">
-      <div>
-        <p class="section-kicker">Selected work</p>
-        <h2 id="work-title">代表工作</h2>
-      </div>
-      <a class="section-link" href="{{ '/publications/' | relative_url }}">全部论文 <span aria-hidden="true">→</span></a>
-    </div>
-
-    <div class="work-list">
-      <article class="work-card">
-        <div class="work-card__visual work-card__visual--cad" aria-hidden="true">
-          <div class="cad-preview__label">TEXT-TO-CAD / RETRIEVAL</div>
-          <div class="cad-preview__query">natural language query</div>
-          <div class="cad-preview__line"></div>
-          <div class="cad-preview__results">
-            <span></span><span></span><span></span>
-          </div>
-        </div>
-        <div class="work-card__body">
-          <div class="work-card__meta"><span>arXiv 2026</span><span>Cross-modal Retrieval</span></div>
-          <h3>Text-to-CAD Retrieval: a Strong Baseline</h3>
-          <p>从自然语言描述中检索语义相关的三维 CAD 模型，并联合构造序列与几何点云建立统一检索基线。</p>
-          <p class="work-card__authors">Honghu Pan, Zibo Du, <strong>Daxiang Liu</strong>, Chengliang Liu, Xiaoling Luo</p>
-          <div class="work-card__links">
-            <a href="https://arxiv.org/abs/2605.05572" target="_blank" rel="noopener noreferrer">Paper ↗</a>
-            <a href="{{ '/publication/text-to-cad-retrieval/' | relative_url }}">Project →</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="work-card">
-        <div class="work-card__visual work-card__visual--image">
-          <img src="{{ '/assets/projects/medstrucgen/framework.png' | relative_url }}" alt="MedStrucGen-ML 方法框架图" loading="lazy">
-        </div>
-        <div class="work-card__body">
-          <div class="work-card__meta"><span>Under Review</span><span>Medical AI</span></div>
-          <h3>Structured Radiology Report Generation for Temporomandibular Disorders</h3>
-          <p>通过检测引导的局部表征与类别特定交叉注意力，生成结构化、可核查的颞下颌关节影像报告。</p>
-          <div class="work-card__links">
-            <a href="https://github.com/daxiangliu/MedStrucGen-ML" target="_blank" rel="noopener noreferrer">Code ↗</a>
-            <a href="{{ '/publication/medstrucgen-ml/' | relative_url }}">Project →</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="home-section home-section--split" aria-label="最新动态与个人简介">
-    <div class="news-panel">
-      <div class="section-heading section-heading--compact">
-        <div>
-          <p class="section-kicker">Updates</p>
-          <h2>最新动态</h2>
-        </div>
-      </div>
-      <ol class="news-list">
-        <li>
-          <time datetime="2026-05">2026.05</time>
-          <p><a href="{{ '/publication/text-to-cad-retrieval/' | relative_url }}">Text-to-CAD Retrieval</a> 已公开为 arXiv 预印本。</p>
-        </li>
-        <li>
-          <time datetime="2026-04">2026.04</time>
-          <p><a href="{{ '/publication/medstrucgen-ml/' | relative_url }}">MedStrucGen-ML</a> 项目页与代码仓库已公开。</p>
-        </li>
-      </ol>
-    </div>
-
-    <aside class="about-panel">
-      <p class="section-kicker">Beyond research</p>
-      <h2>研究之外</h2>
-      <p>本科毕业于哈尔滨理工大学软件工程专业。研究之外，我喜欢旅行与摄影，也会记录一些学习过程和技术实践。</p>
-      <div class="about-panel__links">
-        <a href="{{ '/year-archive/' | relative_url }}">阅读文章</a>
-        <a href="mailto:liudaxiang.cs@foxmail.com">联系我</a>
-      </div>
-    </aside>
-  </section>
+  </div>
 </div>
+
+<div class="open-science-note">
+  <div class="i18n-en"><p>I value reproducible and open research. Representative project pages and available code repositories are listed below; feedback and discussion are always welcome.</p></div>
+  <div class="i18n-zh"><p>我重视可复现、开放的研究。下方整理了代表性项目主页与已公开的代码仓库，欢迎交流与反馈。</p></div>
+</div>
+
+<div class="opensource-section" id="featured-projects">
+  <div class="section-kicker"><span class="i18n-en-inline">💻 Featured Projects</span><span class="i18n-zh-inline">💻 代表项目</span></div>
+  <div class="opensource-title"><span class="i18n-en-inline">Research Projects</span><span class="i18n-zh-inline">研究项目</span></div>
+  <p class="opensource-subtitle i18n-en">Representative projects in CAD / 3D intelligence and medical image analysis.</p>
+  <p class="opensource-subtitle i18n-zh">CAD / 3D 智能与医学图像分析方向的代表性项目。</p>
+
+  <div class="opensource-grid">
+    <article class="opensource-card floating-card">
+      <div class="project-logo project-logo--cad" aria-hidden="true"><span>Text</span><b>→</b><span>CAD</span></div>
+      <div class="opensource-card-title">Text-to-CAD Retrieval</div>
+      <div class="opensource-card-meta"><span class="i18n-en-inline">arXiv 2026 · Cross-modal Retrieval</span><span class="i18n-zh-inline">arXiv 2026 · 跨模态检索</span></div>
+      <div class="opensource-card-links">
+        <a href="https://arxiv.org/abs/2605.05572" target="_blank" rel="noopener noreferrer"><span class="i18n-en-inline">Paper</span><span class="i18n-zh-inline">论文</span></a>
+        <a href="{{ '/publication/text-to-cad-retrieval/' | relative_url }}"><span class="i18n-en-inline">Project</span><span class="i18n-zh-inline">项目</span></a>
+      </div>
+    </article>
+
+    <article class="opensource-card floating-card">
+      <img src="{{ '/assets/projects/medstrucgen/framework.png' | relative_url }}" alt="MedStrucGen-ML framework" loading="lazy">
+      <div class="opensource-card-title">MedStrucGen-ML</div>
+      <div class="opensource-card-meta"><span class="i18n-en-inline">Medical AI · Structured Reporting</span><span class="i18n-zh-inline">医学影像 · 结构化报告</span></div>
+      <div class="opensource-card-links">
+        <a href="{{ '/publication/medstrucgen-ml/' | relative_url }}"><span class="i18n-en-inline">Project</span><span class="i18n-zh-inline">项目</span></a>
+        <a href="https://github.com/daxiangliu/MedStrucGen-ML" target="_blank" rel="noopener noreferrer"><span class="i18n-en-inline">Code</span><span class="i18n-zh-inline">代码</span></a>
+      </div>
+    </article>
+  </div>
+</div>
+
+<div class="news-section" id="news">
+  <div class="section-kicker"><span class="i18n-en-inline">🔥 Updates</span><span class="i18n-zh-inline">🔥 最新动态</span></div>
+  <div class="news-title"><span class="i18n-en-inline">News</span><span class="i18n-zh-inline">新闻动态</span></div>
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-date">2026.05</div>
+      <div class="news-text i18n-en"><strong>Text-to-CAD Retrieval: a Strong Baseline</strong> is now available as an arXiv preprint.</div>
+      <div class="news-text i18n-zh"><strong>Text-to-CAD Retrieval: a Strong Baseline</strong> 已公开为 arXiv 预印本。</div>
+    </div>
+    <div class="news-card">
+      <div class="news-date">2026.04</div>
+      <div class="news-text i18n-en">The project page and code repository for <strong>MedStrucGen-ML</strong> are now public.</div>
+      <div class="news-text i18n-zh"><strong>MedStrucGen-ML</strong> 项目页与代码仓库已公开。</div>
+    </div>
+  </div>
+</div>
+
+<h1 class="reference-section-title"><span class="i18n-en-inline">📝 Publications</span><span class="i18n-zh-inline">📝 论文</span></h1>
+<div class="paper-note"><span class="i18n-en-inline">Representative publications and preprints.</span><span class="i18n-zh-inline">代表性论文与预印本。</span></div>
+
+<div id="publications-wrapper">
+  <h2 class="publication-group-title"><span class="i18n-en-inline">Selected Publications</span><span class="i18n-zh-inline">代表性论文</span></h2>
+
+  <article class="paper-box floating-card">
+    <div class="paper-box-image">
+      <div>
+        <div class="badge">arXiv 2026</div>
+        <div class="paper-placeholder paper-placeholder--cad" aria-hidden="true"><span>Text</span><b>→</b><span>CAD</span></div>
+      </div>
+    </div>
+    <div class="paper-box-text">
+      <p><strong>Text-to-CAD Retrieval: a Strong Baseline</strong></p>
+      <p class="paper-authors">Honghu Pan, Zibo Du, <span class="author-self">Daxiang Liu</span>, Chengliang Liu, Xiaoling Luo</p>
+      <div class="badge-container"><span class="inner-tag-badge">Cross-modal Retrieval</span><span class="inner-tag-badge">CAD / 3D</span></div>
+      <div class="paper-link-container">
+        <a class="paper-link-btn" href="https://arxiv.org/abs/2605.05572" target="_blank" rel="noopener noreferrer"><span class="i18n-en-inline">Paper</span><span class="i18n-zh-inline">论文</span></a>
+        <a class="paper-link-btn" href="{{ '/publication/text-to-cad-retrieval/' | relative_url }}"><span class="i18n-en-inline">Project</span><span class="i18n-zh-inline">项目</span></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="paper-box floating-card">
+    <div class="paper-box-image">
+      <div>
+        <div class="badge"><span class="i18n-en-inline">Under Review</span><span class="i18n-zh-inline">在投</span></div>
+        <img src="{{ '/assets/projects/medstrucgen/framework.png' | relative_url }}" alt="MedStrucGen-ML method framework" loading="lazy">
+      </div>
+    </div>
+    <div class="paper-box-text">
+      <p><strong>Structured Radiology Report Generation for Temporomandibular Disorders via Anatomy-Aware Multi-Label Classification</strong></p>
+      <p class="paper-authors"><span class="author-self">Daxiang Liu</span> et al.</p>
+      <div class="badge-container"><span class="inner-tag-badge">Medical AI</span><span class="inner-tag-badge">Structured Reporting</span></div>
+      <div class="paper-link-container">
+        <a class="paper-link-btn" href="{{ '/publication/medstrucgen-ml/' | relative_url }}"><span class="i18n-en-inline">Project</span><span class="i18n-zh-inline">项目</span></a>
+        <a class="paper-link-btn" href="https://github.com/daxiangliu/MedStrucGen-ML" target="_blank" rel="noopener noreferrer"><span class="i18n-en-inline">Code</span><span class="i18n-zh-inline">代码</span></a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<h1 class="reference-section-title"><span class="i18n-en-inline">🎖 Honors and Awards</span><span class="i18n-zh-inline">🎖 荣誉与奖项</span></h1>
+<ul class="reference-list i18n-en-list-wrap">
+  <li>First Prize, Northeast China Mathematical Modeling Competition, 2024.</li>
+  <li>Meritorious Winner, Mathematical Contest in Modeling, 2024.</li>
+  <li>Silver Award, Baidu Star Programming Competition, Heilongjiang Division, 2023.</li>
+</ul>
+<ul class="reference-list i18n-zh-list-wrap">
+  <li>2024.07：东北三省数学建模竞赛一等奖</li>
+  <li>2024.05：美国大学生数学建模竞赛一等奖</li>
+  <li>2023.09：第 19 届百度之星程序设计大赛黑龙江赛区银奖</li>
+</ul>
+
+<h1 class="reference-section-title"><span class="i18n-en-inline">📖 Education</span><span class="i18n-zh-inline">📖 教育经历</span></h1>
+<ul class="reference-list i18n-en-list-wrap">
+  <li><em>2025.09 – present</em>, M.S. in Computer Science and Technology, Shenzhen University.</li>
+  <li><em>2021.09 – 2025.06</em>, B.E. in Software Engineering, Harbin University of Science and Technology.</li>
+</ul>
+<ul class="reference-list i18n-zh-list-wrap">
+  <li><em>2025.09 – 至今</em>，深圳大学，计算机科学与技术，硕士研究生。</li>
+  <li><em>2021.09 – 2025.06</em>，哈尔滨理工大学，软件工程，工学学士。</li>
+</ul>

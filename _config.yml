@@ -8,7 +8,7 @@
 # 基础站点设置
 locale                   : "zh-CN"
 site_theme               : "default" # 可选主题："default"、"air"、"sunrise"、"mint"、"dirt"、"contrast"
-title                    : "Daxiang Liu"
+title                    : "Daxiang Liu's Homepage"
 title_separator          : "-"
 name                     : &name "Daxiang Liu"
 description              : &description "Daxiang Liu 的学术主页：CAD / 3D 智能、Text-to-CAD 跨模态检索与医学图像分析。"
@@ -25,9 +25,9 @@ author:
   avatar           : "my_photo_katong.jpg"
   name             : "Daxiang Liu"
   pronouns         : # 示例："she/her"
-  bio              : "硕士研究生｜CAD / 3D 智能与医学图像分析"
-  location         : "深圳，中国"
-  employer         : "深圳大学"
+  bio              :
+  location         : "Shenzhen, Guangdong, China"
+  employer         :
   uri              : # 个人网址
   # 我的联系邮箱
   email            : "liudaxiang.cs@foxmail.com"
@@ -81,8 +81,8 @@ author:
   xing             : # 用户名
   youtube          : # 用户名
   zhihu            : # 用户名
-  csdn             : https://blog.csdn.net/weixin_63310665
-  bilibili         : https://space.bilibili.com/1647293091
+  csdn             :
+  bilibili         :
 
 # 出版物分类及对应标题
 publication_category:

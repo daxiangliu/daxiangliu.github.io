@@ -1,39 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var switcher = document.querySelector("[data-language-switcher]");
+  var switcher = document.getElementById("research-language-switcher");
   if (!switcher) return;
 
-  var tabs = Array.from(switcher.querySelectorAll("[data-language]"));
-  var panels = Array.from(switcher.querySelectorAll("[data-language-panel]"));
+  var tabs = Array.from(switcher.querySelectorAll(".lang-tab"));
+  var panels = Array.from(switcher.querySelectorAll(".lang-panel"));
 
-  function selectLanguage(language, focusTab) {
+  function setLanguage(language) {
+    document.body.classList.toggle("lang-en", language === "en");
+    document.body.classList.toggle("lang-zh", language === "zh");
+    document.documentElement.setAttribute("lang", language === "zh" ? "zh-CN" : "en");
+
     tabs.forEach(function (tab) {
-      var active = tab.dataset.language === language;
-      tab.classList.toggle("is-active", active);
+      var active = tab.dataset.lang === language;
+      tab.classList.toggle("active", active);
       tab.setAttribute("aria-selected", active ? "true" : "false");
-      tab.setAttribute("tabindex", active ? "0" : "-1");
-      if (active && focusTab) tab.focus();
     });
 
     panels.forEach(function (panel) {
-      var active = panel.dataset.languagePanel === language;
-      panel.classList.toggle("is-active", active);
-      panel.hidden = !active;
+      panel.classList.toggle("active", panel.dataset.langPanel === language);
     });
   }
 
-  tabs.forEach(function (tab, index) {
-    tab.addEventListener("click", function () {
-      selectLanguage(tab.dataset.language, false);
-    });
-
-    tab.addEventListener("keydown", function (event) {
-      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-      event.preventDefault();
-      var direction = event.key === "ArrowRight" ? 1 : -1;
-      var nextIndex = (index + direction + tabs.length) % tabs.length;
-      selectLanguage(tabs[nextIndex].dataset.language, true);
-    });
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () { setLanguage(tab.dataset.lang); });
+    tab.addEventListener("mouseenter", function () { setLanguage(tab.dataset.lang); });
+    tab.addEventListener("focus", function () { setLanguage(tab.dataset.lang); });
   });
 
-  selectLanguage("zh", false);
+  setLanguage("en");
 });
